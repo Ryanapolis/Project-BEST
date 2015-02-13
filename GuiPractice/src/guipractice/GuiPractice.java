@@ -9,7 +9,9 @@ package guipractice;
  * @author Ashley
  */
 public class GuiPractice {
-
+/* 
+	Hi. You were probbaly expecting some code change or something. This is awkward... 
+*/
     /**
      * @param args the command line arguments
      */
