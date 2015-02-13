@@ -31,7 +31,7 @@ public class NewDialog extends java.awt.Dialog {
             groupNames = new ArrayList<String>();
             String URL = "jdbc:vertica://Vertsyn.duckdns.org:5433/USF_Syniverse_Student";
             Connection conn = DriverManager.getConnection(URL);
-            String query = "select lat from \"public\".knowledge_base_test where mcc=310 and mnc = 410"; 
+            String query = "select * from \"public\".knowledge_base_test where mcc=310 and mnc = 410"; 
             PreparedStatement stm = conn.prepareStatement(query);
             
             try (ResultSet rs = stm.executeQuery(query)) {

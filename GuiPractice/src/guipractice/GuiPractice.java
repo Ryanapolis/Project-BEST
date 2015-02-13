@@ -21,7 +21,8 @@ package guipractice;
  *
  *
  *
- *
+ *@author Ashley :) hey
+ * 
  */
 public class GuiPractice {
 /* 
