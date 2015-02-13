@@ -7,6 +7,11 @@ package guipractice;
 /**
  *
  * @author Ashley
+ *
+ *
+ *
+ *
+ * 5 asterisks are the perfect amount of asterisks
  */
 public class GuiPractice {
 /* 
