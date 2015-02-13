@@ -7,6 +7,21 @@ package guipractice;
 /**
  *
  * @author Ashley
+ * 
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
  */
 public class GuiPractice {
 
