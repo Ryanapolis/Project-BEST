@@ -6,7 +6,7 @@ package guipractice;
 
 /**
  *
- * @author Ashley
+ * @author Ashley :) hey
  */
 public class GuiPractice {
 
