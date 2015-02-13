@@ -7,11 +7,15 @@ package guipractice;
 /**
  *
  * @author Ashley
+<<<<<<< HEAD
  * 
+=======
+>>>>>>> origin/Frank's-Branch
  *
  *
  *
  *
+<<<<<<< HEAD
  *
  *
  *
@@ -23,6 +27,9 @@ package guipractice;
  *
  *@author Ashley :) hey
  * 
+=======
+ * 5 asterisks are the perfect amount of asterisks
+>>>>>>> origin/Frank's-Branch
  */
 public class GuiPractice {
 /* 
