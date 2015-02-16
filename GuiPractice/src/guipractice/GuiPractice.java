@@ -7,9 +7,34 @@ package guipractice;
 /**
  *
  * @author Ashley
+<<<<<<< HEAD
+ * 
+=======
+>>>>>>> origin/Frank's-Branch
+ *
+ *
+ *
+ *
+<<<<<<< HEAD
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *
+ *@author Ashley :) hey
+ * 
+=======
+ * 5 asterisks are the perfect amount of asterisks
+>>>>>>> origin/Frank's-Branch
  */
 public class GuiPractice {
-
+/* 
+	Hi. You were probbaly expecting some code change or something. This is awkward... 
+*/
     /**
      * @param args the command line arguments
      */
