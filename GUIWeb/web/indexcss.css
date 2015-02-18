@@ -1,0 +1,28 @@
+/* 
+    Document   : indexcss
+    Created on : Feb 16, 2015, 8:41:59 PM
+    Author     : Ashley
+    Description:
+        Purpose of the stylesheet follows.
+*/
+#mymap {
+    width:800px;
+    height: 800px;
+}
+
+ #Select1 {
+    width: 136px;
+ }
+ #Select2 {
+    width: 136px;
+ }
+ #Submit1 {
+    width: 91px;
+ }
+ #sltCarrier {
+    width: 125px;
+ }
+ #sltNode {
+    width: 125px;
+ }
+   
