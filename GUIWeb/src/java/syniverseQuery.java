@@ -18,9 +18,9 @@ import javax.swing.JApplet;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.json.JSONArray;
-import org.json.JSONException;
-import org.json.JSONObject;
+//import org.json.JSONArray;
+//import org.json.JSONException;
+//import org.json.JSONObject;
 
 
 public class syniverseQuery extends JApplet {
@@ -29,8 +29,8 @@ public class syniverseQuery extends JApplet {
      ResultSet rs;
      String aResult;
      List <String> CarrierList;
-     JSONObject responseDetailsJson = new JSONObject();
-     JSONArray jsonArray = new JSONArray();
+//     JSONObject responseDetailsJson = new JSONObject();
+//     JSONArray jsonArray = new JSONArray();
      
     public List <String> dbConnect(){
          try{
@@ -50,20 +50,20 @@ public class syniverseQuery extends JApplet {
                 //List is full of Carriers store in JSON file for display purposes
                 for (String carrier : CarrierList){
                     
-                    JSONObject carrierDetails = new JSONObject();
-                    try {
-                        carrierDetails.put("Carrier",carrier);
-                        jsonArray.put(carrierDetails);
-                    } catch (JSONException ex) {
-                        Logger.getLogger(syniverseQuery.class.getName()).log(Level.SEVERE, null, ex);
-                    }
+//                    JSONObject carrierDetails = new JSONObject();
+//                    try {
+//                        carrierDetails.put("Carrier",carrier);
+//                        jsonArray.put(carrierDetails);
+//                    } catch (JSONException ex) {
+//                        Logger.getLogger(syniverseQuery.class.getName()).log(Level.SEVERE, null, ex);
+//                    }
                     
                 }
-             try {
-                 responseDetailsJson.put("Carriers", jsonArray);
-             } catch (JSONException ex) {
-                 Logger.getLogger(syniverseQuery.class.getName()).log(Level.SEVERE, null, ex);
-             }
+//             try {
+//                 responseDetailsJson.put("Carriers", jsonArray);
+//             } catch (JSONException ex) {
+//                 Logger.getLogger(syniverseQuery.class.getName()).log(Level.SEVERE, null, ex);
+//             }
                 
                 return CarrierList;
                
