@@ -33,51 +33,74 @@ public class syniverseQuery extends JApplet {
      JSONArray jsonArray = new JSONArray();
      
     public List <String> dbConnect(){
-         try{
-                String host = "jdbc:vertica://Vertsyn.duckdns.org:5433/USF_Syniverse_Student";
-                String uName = "dbadmin";
-                String uPass = "Syn1v3rs3";
-                conn = DriverManager.getConnection(host,uName,uPass);
-                stmt = conn.createStatement();
-                String sql = "Select OPERATOR_NAME from T_VPA_REF_OPERATOR order by OPERATOR_NAME";
-                rs = stmt.executeQuery(sql);
-                
-                rs.next();
-                while(rs.next()){
-                    NodeLocation myCarrier = new NodeLocation(rs.getString("OPERATOR_NAME"),"dummy", 1);
-                    CarrierList.add(myCarrier.getCarrier());
+        try {
+            String host = "jdbc:vertica://Vertsyn.duckdns.org:5433/USF_Syniverse_Student";
+            String uName = "dbadmin";
+            String uPass = "Syn1v3rs3";
+            conn = DriverManager.getConnection(host,uName,uPass);
+            stmt = conn.createStatement();
+            String sql = "Select OPERATOR_NAME from T_VPA_REF_OPERATOR order by OPERATOR_NAME";
+            rs = stmt.executeQuery(sql);
+
+            rs.next();
+            while(rs.next()){
+                NodeLocation myCarrier = new NodeLocation(rs.getString("OPERATOR_NAME"),"dummy", 1);
+                CarrierList.add(myCarrier.getCarrier());
+            }
+            //List is full of Carriers store in JSON file for display purposes
+            for (String carrier : CarrierList){
+
+                JSONObject carrierDetails = new JSONObject();
+                try {
+                    carrierDetails.put("Carrier",carrier);
+                    jsonArray.put(carrierDetails);
+                } catch (JSONException ex) {
+                    Logger.getLogger(syniverseQuery.class.getName()).log(Level.SEVERE, null, ex);
                 }
-                //List is full of Carriers store in JSON file for display purposes
-                for (String carrier : CarrierList){
-                    
-                    JSONObject carrierDetails = new JSONObject();
-                    try {
-                        carrierDetails.put("Carrier",carrier);
-                        jsonArray.put(carrierDetails);
-                    } catch (JSONException ex) {
-                        Logger.getLogger(syniverseQuery.class.getName()).log(Level.SEVERE, null, ex);
-                    }
-                    
-                }
-             try {
+
+            }
+            try {
                  responseDetailsJson.put("Carriers", jsonArray);
-             } catch (JSONException ex) {
-                 Logger.getLogger(syniverseQuery.class.getName()).log(Level.SEVERE, null, ex);
-             }
+            } 
+            catch (JSONException ex) {
+                Logger.getLogger(syniverseQuery.class.getName()).log(Level.SEVERE, null, ex);
+            }
                 
-                return CarrierList;
-               
-                
-                }
-                catch(SQLException err){
-                    System.out.println(err.getMessage());
-                }
+            return CarrierList;                
+        }
+            catch(SQLException err){
+                System.out.println(err.getMessage());
+            }
          return null;
 
     }  
     
-}
+    public String dbTest(){
+        try{
+            String host = "jdbc:vertica://Vertsyn.duckdns.org:5433/USF_Syniverse_Student";
+            String uName = "dbadmin";
+            String uPass = "Syn1v3rs3";
+            conn = DriverManager.getConnection(host,uName,uPass);
+            stmt = conn.createStatement();
+            String sql = "Select OPERATOR_NAME from T_VPA_REF_OPERATOR order by OPERATOR_NAME";
+            rs = stmt.executeQuery(sql);
 
+            rs.next();
+
+            while(rs.next()){
+                NodeLocation myCarrier = new NodeLocation(rs.getString("OPERATOR_NAME"),"dummy", 1);
+                CarrierList.add(myCarrier.getCarrier());
+            }
+
+            return sql;
+        }
+
+        catch(SQLException err){
+            System.out.println(err.getMessage());  
+            return err.getMessage();
+        }    
+    }
+}
 
 
 
