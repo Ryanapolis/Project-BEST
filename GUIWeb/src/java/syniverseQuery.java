@@ -3,11 +3,10 @@
  * objects, It also transforms the query results to JSON format
  */
 
-/**
+/*
  *
  * @author Ashley
  */
-
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -21,7 +20,6 @@ import java.util.logging.Logger;
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
-
 
 public class syniverseQuery extends JApplet {
      Connection conn;
@@ -43,10 +41,12 @@ public class syniverseQuery extends JApplet {
             rs = stmt.executeQuery(sql);
 
             rs.next();
-            while(rs.next()){
+            
+            while (rs.next()){
                 NodeLocation myCarrier = new NodeLocation(rs.getString("OPERATOR_NAME"),"dummy", 1);
                 CarrierList.add(myCarrier.getCarrier());
-            }
+            } // end while (rs.next())
+            
             //List is full of Carriers store in JSON file for display purposes
             for (String carrier : CarrierList){
 
@@ -54,29 +54,31 @@ public class syniverseQuery extends JApplet {
                 try {
                     carrierDetails.put("Carrier",carrier);
                     jsonArray.put(carrierDetails);
-                } catch (JSONException ex) {
+                } // end try
+                catch (JSONException ex) {
                     Logger.getLogger(syniverseQuery.class.getName()).log(Level.SEVERE, null, ex);
-                }
-
-            }
+                } // end catch
+            } // end for (String carrier : CarrierList)
+            
             try {
                  responseDetailsJson.put("Carriers", jsonArray);
-            } 
+            } // end try
             catch (JSONException ex) {
                 Logger.getLogger(syniverseQuery.class.getName()).log(Level.SEVERE, null, ex);
-            }
-                
+            } // end catch
+              
             return CarrierList;                
-        }
-            catch(SQLException err){
-                System.out.println(err.getMessage());
-            }
-         return null;
-
+        } // end try
+        
+        catch(SQLException err){
+            System.out.println(err.getMessage());
+        } // end catch
+        
+        return null;
     }  
     
     public String dbTest(){
-        try{
+        try {
             String host = "jdbc:vertica://Vertsyn.duckdns.org:5433/USF_Syniverse_Student";
             String uName = "dbadmin";
             String uPass = "Syn1v3rs3";
@@ -87,20 +89,20 @@ public class syniverseQuery extends JApplet {
 
             rs.next();
 
-            while(rs.next()){
+            while (rs.next()){
                 NodeLocation myCarrier = new NodeLocation(rs.getString("OPERATOR_NAME"),"dummy", 1);
                 CarrierList.add(myCarrier.getCarrier());
-            }
+            } // end while (rs.next())
 
             return sql;
-        }
+        } // end try
 
-        catch(SQLException err){
+        catch (SQLException err){
             System.out.println(err.getMessage());  
             return err.getMessage();
-        }    
-    }
-}
+        } // end catch (SQLException err)
+    } // end public String dbTest()
+} // end public class syniverseQuery extends JApplet
 
 
 
