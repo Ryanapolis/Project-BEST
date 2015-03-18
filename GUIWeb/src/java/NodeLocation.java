@@ -7,23 +7,30 @@
  *
  * @author Ashley
  */
+
+
+import java.sql.ResultSet;
+import java.sql.ResultSetMetaData;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 public class NodeLocation {
-    private String nodeID;
-    private String carrier;
-    private int range;
+    protected ResultSetMetaData metaData     = null;
+    protected ResultSet         rs           = null;
+    protected int               columnCount  = 0;
+    protected String            propertyName = null;
+    protected String carrierName;
+    String getCarrier() {
+            return carrierName;
+            }
+    protected String node;
+    protected int range;
     
-    public NodeLocation (String carrier, String nodeID, int range){
-        this.carrier = carrier;
-        this.nodeID = nodeID;
+    public NodeLocation(String carrier, String node, int range)
+    {
+        this.carrierName = carrier;
+        this.node = node;
         this.range = range;
-    }
-    public String getNodeID(){
-        return nodeID;
-    }
-    public String getCarrier(){
-        return carrier;
-    }
-    public int getRange(){
-        return range;
     }
 }

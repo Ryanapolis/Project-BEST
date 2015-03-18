@@ -3,6 +3,7 @@
  * Java Class and then push them to the HTML page.
  */
 
+
 function init() {
        var mapDiv = document.getElementById("mymap");
        // below we must specify our map options
@@ -101,10 +102,39 @@ function init() {
         
         polygon.setMap(map);
         
-        
-        
+        //TESTING
+        var TestDiv = document.getElementById("test");
+        TestDiv.innerHTML = "JSON PRACTICE";
+        var myJSONObject = {"bindings": [
+        {"ircEvent": "PRIVMSG", "method": "newURI", "regex": "^http://.*"},
+        {"ircEvent": "PRIVMSG", "method": "deleteURI", "regex": "^delete.*"},
+        {"ircEvent": "PRIVMSG", "method": "randomURI", "regex": "^random.*"}
+        ]};
+             
      }
      
+    function Get_Data() 
+    {
+        $.get('syniverseQuery.java', '', Process_Response);
+    }
+    function Process_Response(result, status)
+    {
+        if (status == 'success')
+        {
+            $('Message').text(result);
+            
+        }
+        else
+        {
+            $('Message').text('Error retrieving data from server');
+        }
+        
+    }
+    function test(location)
+    {
+        $('Location').text("Coordinate");
+    
+    }
     
 
 
