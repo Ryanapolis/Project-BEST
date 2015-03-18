@@ -5,8 +5,10 @@
 
 
 function init() {
+       
        var mapDiv = document.getElementById("mymap");
        // below we must specify our map options
+       
        var mapOptions = {
            center: new google.maps.LatLng (27.9710,-82.4650),
            zoom: 8,
@@ -102,6 +104,8 @@ function init() {
         
         polygon.setMap(map);
         
+        
+        
         //TESTING
         var TestDiv = document.getElementById("test");
         TestDiv.innerHTML = "JSON PRACTICE";
@@ -111,6 +115,10 @@ function init() {
         {"ircEvent": "PRIVMSG", "method": "randomURI", "regex": "^random.*"}
         ]};
              
+        
+        
+
+        
      }
      
     function Get_Data() 
@@ -121,7 +129,7 @@ function init() {
     {
         if (status == 'success')
         {
-            $('Message').text(result);
+            $('Message').text(result);          
             
         }
         else
@@ -130,11 +138,7 @@ function init() {
         }
         
     }
-    function test(location)
-    {
-        $('Location').text("Coordinate");
-    
-    }
+   
     
 
 

@@ -38,8 +38,18 @@
                     </tr>
                     <tr>
                         <td> Node ID:</td>
-                        <td><input id="Select2" type="text" name="enteredValue" /> </td>
+                        <td><input id="Select2" type="text" name="countryValue" /> </td>
                     </tr>
+                    <tr>
+                        <td>MCC:</td>
+                        <td>
+                            <select name="ddlMcc">
+                                <option value="310">USA</option>
+                                <option></option>
+                            </select>
+                        </td>
+                    </tr>
+                    
                     <tr>
                         <td><input type="submit" id="Select1" value="Submit"</td>
                     </tr>

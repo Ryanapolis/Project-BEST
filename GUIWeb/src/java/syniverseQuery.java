@@ -8,11 +8,14 @@
  * @author Ashley
  */
 
-
+/*
+ * I will get multiple lat,longs and ranges when I query
+ * the db based only off of Country code and MCC. Must create list of 
+ * objects that holds all of these values. For easy passing to JSP and JS
+ */
 
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.Properties;
 import java.util.List;
 
 
@@ -22,8 +25,7 @@ public class syniverseQuery  {
      Statement stmt;
      ResultSet rs;
      String aResult;
-  
-    
+ 
     
     public List <String> dbConnect(){
          List <String> CarrierList = new ArrayList<String>();
@@ -61,7 +63,7 @@ public class syniverseQuery  {
     
     public String dbTest(String carrier, String node) throws ClassNotFoundException{
        
-        System.out.println("Inside dbTest()");
+     
         try {
             Class.forName("com.vertica.jdbc.Driver");
         }
@@ -74,7 +76,7 @@ public class syniverseQuery  {
             String host = "jdbc:vertica://Vertsyn.duckdns.org:5433/USF_Syniverse_Student";
             String uName = "dbadmin";
             String uPass = "Syn1v3rs3";
-            conn = DriverManager.getConnection(host,uName,uPass); //fails here
+            conn = DriverManager.getConnection(host,uName,uPass); 
             stmt = conn.createStatement();
             String sql = "Select lat, lon from public.Node_Average_test where RECORDING_ENTITY_ID = 12085978063";
             rs = stmt.executeQuery(sql);
@@ -84,8 +86,6 @@ public class syniverseQuery  {
             String lon = rs.getString("lon");
             String coordinate = lat + "," + lon;
            // rs.next();
-             
-
             return coordinate;
         }
 
@@ -94,6 +94,43 @@ public class syniverseQuery  {
             return err.getMessage();
         }    
     }
+   
+    /* Possible dropdownlist getter for onload
+      public List <Integer> getMCCs() throws SQLException
+    {
+        List mccList = new ArrayList();
+         try {
+            Class.forName("com.vertica.jdbc.Driver");
+        }
+        catch(ClassNotFoundException ex) {
+            System.out.println("Error: unable to load driver class!");
+            System.exit(1);
+        }
+         try{
+            String host = "jdbc:vertica://Vertsyn.duckdns.org:5433/USF_Syniverse_Student";
+            String uName = "dbadmin";
+            String uPass = "Syn1v3rs3";
+            conn = DriverManager.getConnection(host,uName,uPass); //fails here
+            stmt = conn.createStatement();
+            String sql = "Select mcc from openbmap.mcc";
+            rs = stmt.executeQuery(sql);
+            while(rs.next())
+            {
+                //get row data
+                mccList.add(rs.getString("mcc"));
+            }
+             
+
+            return mccList;
+        }
+          catch(SQLException err){
+            System.out.println(err.getMessage());  
+            return mccList;
+        } 
+        //obtain list of titles
+        
+    }*/
+    
    
 }
 
