@@ -6,7 +6,7 @@
 
 function init() {
        
-       var mapDiv = document.getElementById("mymap");
+       var mapDiv = document.getElementById("map_container");
        // below we must specify our map options
        
        var mapOptions = {

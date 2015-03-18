@@ -2,15 +2,8 @@
     Document   : indexcss
     Created on : Feb 16, 2015, 8:41:59 PM
     Author     : Ashley
-    Description:
-        Purpose of the stylesheet follows.
+    Description: Purpose of the stylesheet follows.
 */
-body {
-    font-family: Verdana, Arial, sans-serif;
-    font-size: smaller;
-    padding: 50px;
-    color: #555;
-}
 h1 {
     text-align: left;
     letter-spacing: 6px;
@@ -20,33 +13,59 @@ h1 {
     width: 450px;
 }
 
-#mymap {
-    width:1000px;
-    height: 700px;
+/*#main_container {
+    border-top-color: red;
+    border-top-width: 5px;
+    border-bottom-color: red;
+    border-bottom-width: 5px;
+    position: fixed;
+    height: 99%;
+    width: 99%;
+    padding: 5px;
+    background-color: green;
+}*/
+
+#query_container {
+    float: left;
+    width: 30%;
+    height: 60%;
+    background-color: yellow;
 }
- #Select1 {
-    width: 136px;
+
+#map_container {
+    float: right;
+    width: 50%;
+    height: 95%;
+    background-color: pink;
+}
+
+ #ddl_carrier {
  }
- #Select2 {
-    width: 134px;
+ 
+ #tb_node_id {
+ } 
+ 
+ #ddl_mcc {
  }
+ 
  #Submit1 {
-    width: 91px;
  }
+ 
  #sltCarrier {
-    width: 125px;
  }
+ 
  #sltNode {
-    width: 125px;
  }
+ 
  #resultstable {
      width: 300px;
      padding: 10px;
      background-color: #c5e7e0;
      float: right;
  }
- table {
-    width: 580px;
+ 
+ #tbl_query {
+    width: 30%;
     padding: 10px;
     background-color: #c5e7e0;
 }
