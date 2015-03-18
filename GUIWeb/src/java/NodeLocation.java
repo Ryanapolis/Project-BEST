@@ -9,28 +9,41 @@
  */
 
 
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
-import java.sql.SQLException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
-
 public class NodeLocation {
-    protected ResultSetMetaData metaData     = null;
-    protected ResultSet         rs           = null;
-    protected int               columnCount  = 0;
-    protected String            propertyName = null;
+   
     protected String carrierName;
-    String getCarrier() {
-            return carrierName;
-            }
-    protected String node;
-    protected int range;
-    
-    public NodeLocation(String carrier, String node, int range)
+    String getCarrier()
     {
-        this.carrierName = carrier;
+        return carrierName;
+    }
+    protected String node;
+    String getNode()
+    {
+        return node;
+    }
+    protected int range;
+    int getRange()
+    {
+        return range;
+    }
+    protected long lat;
+    long getLat()
+    {
+        return lat;
+    }
+    protected long lon;
+    long getLon()
+    {
+        return lon;
+    }
+    
+    public NodeLocation(String node, int range, long lat, long lon)
+    {
         this.node = node;
         this.range = range;
+        this.lat = lat;
+        this.lon = lon;
     }
-}
+
+ }
+

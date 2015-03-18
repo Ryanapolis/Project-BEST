@@ -42,7 +42,7 @@ public class SyniverseFormHandlerServlet extends HttpServlet {
         //gets all selected options from the client browser
          
         String selectedCarrier = request.getParameter("carrier");
-        String enteredValue = request.getParameter("enteredValue");
+        String mccValue = request.getParameter("countryValue");
         //function call and pass enteredValue and selectedCarrier
         syniverseQuery sQuery = new syniverseQuery();
         //List<String> results = sQuery.dbConnect();
@@ -50,9 +50,9 @@ public class SyniverseFormHandlerServlet extends HttpServlet {
         List <String> test = sQuery.dbConnect();
         String coordinate = "init";
         
-       // coordinate = sQuery.dbTest(selectedCarrier, enteredValue);
+       
         try {
-            coordinate = sQuery.dbTest(selectedCarrier, enteredValue);
+            coordinate = sQuery.dbTest(selectedCarrier, mccValue);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(SyniverseFormHandlerServlet.class.getName()).log(Level.SEVERE, null, ex);
             
@@ -60,14 +60,13 @@ public class SyniverseFormHandlerServlet extends HttpServlet {
         
        
         //JSP
-        //Pass Coordinates
+        //Set Coordinate Attributes
         request.setAttribute("coordinate", coordinate);
-        request.getRequestDispatcher("results.jsp").forward(request, response);
-        //Pass Carrier List
+        //Set Carrier List Attributes
         request.setAttribute("Data", test);
-        request.getRequestDispatcher("results.jsp").forward(request, response);
+        
         //Pass Node ID
-        request.setAttribute("userNodeID", enteredValue);
+        request.setAttribute("userNodeID", mccValue);
         request.getRequestDispatcher("results.jsp").forward(request, response);
         
         //gets the enteredValue in fields value 

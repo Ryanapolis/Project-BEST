@@ -19,6 +19,7 @@
             <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Results Page</title>
     </head>
+    
     <body onload="init();">
         <h1>Below are your results!</h1>
         <table id="resultstable" >
@@ -26,7 +27,10 @@
                     <tr>
                         <th>Network Range Summary:</th>
                         <th><c:if test="${not empty enteredValue}">${userNodeID}
-                                <script>test(${userNodeID})</script>
+                                <script>
+                                    var jsvariable="${userNodeID}";
+                                    test(jsvariable);
+                                </script>
                             </c:if></th>
                     </tr>
                 </thead>
@@ -48,10 +52,13 @@
                                 Here
                                 <c:if test="${not empty coordinate}">
                                 ${coordinate}
+                                <script>
+                                    //alert('${coordinate}');
+                                </script>
                                 </c:if>
                                 <br />      
                                 <br />
-                                <input type="submit" value="Yes" /><br />
+                                <input type="submit" value="Yes"  /><br />
                                 <br />    
                         </form></td>
                         
@@ -60,9 +67,11 @@
             </table>
                    
    <div id="mymap"></div>
-   <div id="Message"></div>
-   <div id="Location">
-       hellow
+   <div id="Message">message</div>
+   <div id="Location">location
+
+
+
    </div>
     </body>
 </html>
