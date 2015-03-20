@@ -12,7 +12,7 @@
             <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
                 <title>Node Location</title>    
         </head>
-        <body onload="init();">
+        <body>
             
             
              <form method="post" action="SyniverseFormHandlerServlet">
@@ -31,7 +31,7 @@
                         <td>Carrier:</td>
                         <td><select id="Select1" name="carrier">
                     <option>Please Select</option>
-                    <option value="AT&T"</option>AT&T
+                    <option value="410"</option>AT&T
                     <option value ="TMobile"</option>TMobile
                     <option value="VodaFone"</option>VodaFone   
                 </select></td>

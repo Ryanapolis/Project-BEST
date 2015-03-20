@@ -8,42 +8,68 @@
  * @author Ashley
  */
 
-
+/*
+ *Class NodeLocation contains variables associated with nodes
+ * and provides setters and getters for each member
+ * NOTE: carrierName is never initialized in the constructor..(may take out)
+ */
 public class NodeLocation {
    
-    protected String carrierName;
-    String getCarrier()
+    private String carrierName;
+    public void setCarrier(String name)
     {
-        return carrierName;
+        this.carrierName = name;
     }
-    protected String node;
-    String getNode()
+    public String getCarrier()
     {
-        return node;
+        return this.carrierName;
     }
-    protected int range;
-    int getRange()
+    private String node;
+    public void setNode(String node)
     {
-        return range;
+        this.node = node;
     }
-    protected long lat;
-    long getLat()
+    public String getNode()
     {
-        return lat;
+        return this.node;
     }
-    protected long lon;
-    long getLon()
+    private String range;
+    public void setRange(String range)
     {
-        return lon;
+        this.range = range;
+    }
+    public String getRange()
+    {
+        return this.range;
+    }
+    private String lat;
+    public void setLat(String lat)
+    {
+        this.lat = lat;
+    }
+    public String getLat()
+    {
+        return this.lat;
+    }
+    private String lon;
+    public void setLon(String lon)
+    {
+        this.lon = lon;
+    }
+    public String getLon()
+    {
+        return this.lon;
     }
     
-    public NodeLocation(String node, int range, long lat, long lon)
+    /*Constructor for the NodeLocation object
+    * used for the query functions
+    */
+    public NodeLocation(String node, String range, String lat, String lon)
     {
         this.node = node;
         this.range = range;
         this.lat = lat;
         this.lon = lon;
     }
-
  }
 
