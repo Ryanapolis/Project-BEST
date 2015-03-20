@@ -26,7 +26,8 @@ public class syniverseQuery  {
      ResultSet rs;
      String aResult;
  
-    
+    /*I used this function to collect carrier names, it is not currently 
+     being displayed*/
     public List <String> dbConnect(){
          List <String> CarrierList = new ArrayList<String>();
         try {
