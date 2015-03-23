@@ -4,16 +4,22 @@
     Author     : Ashley
     Description: Purpose of the stylesheet follows.
 */
+body {
+    overflow: scroll;
+    width: 100%;
+    height: 100%;
+}
+
 h1 {
     text-align: left;
     letter-spacing: 6px;
     font-size: 1.4em;
     color: #be7429;
     font-weight: normal;
-    width: 450px;
 }
 
-/*#main_container {
+#main_container {
+    border: 2px solid;
     border-top-color: red;
     border-top-width: 5px;
     border-bottom-color: red;
@@ -21,22 +27,40 @@ h1 {
     position: fixed;
     height: 99%;
     width: 99%;
-    padding: 5px;
     background-color: green;
-}*/
+    padding: 1px;
+    margins: 1px;
+}
+
+#menu_containter {
+    width: 98.5%;
+    height: 60px;
+    background-color: blue;
+    position: fixed;
+    border: 2px solid;
+    margin: 1px;
+}
 
 #query_container {
     float: left;
-    width: 30%;
-    height: 60%;
+    width: 44%;
+    height: 90%;
     background-color: yellow;
+    margin: 1px;
+    margin-top: 66px;
+    padding: 1px;
+    position: fixed;
 }
 
 #map_container {
     float: right;
-    width: 50%;
-    height: 95%;
+    width: 54%;
+    height: 90%;
     background-color: pink;
+    margin: 1px;
+    margin-top: 66px;
+    padding: 1px;
+    position: fixed;
 }
 
  #ddl_carrier {
@@ -48,7 +72,7 @@ h1 {
  #ddl_mcc {
  }
  
- #Submit1 {
+ #btn_submit {
  }
  
  #sltCarrier {
@@ -78,4 +102,12 @@ th {
 td {
     padding: 10px;
 }
-   
+
+#logo {
+    float: left;
+    margin-left: 2px;
+    margin-top: 2px;
+    margin-right: 2px;
+    width: 58px;
+    height: 58px;
+}

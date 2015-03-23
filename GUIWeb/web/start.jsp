@@ -13,7 +13,10 @@
         </head>
         <body onload="init();">            
             <form method="post" action="SyniverseFormHandlerServlet">
-                <div id="main_conatiner">
+                <div id="main_container">
+                    <div id="menu_containter">
+                        <img id="logo" src="images/syniverse-logo.png" />
+                    </div>
                     <div id="query_container">
                         <h1>Syniverse-USF BEST</h1>
                         <br />
@@ -38,7 +41,7 @@
                             <tr>
                                 <td>MCC:</td>
                                 <td>
-                                    <select name="ddl_mcc">
+                                    <select id="ddl_mcc">
                                         <option value="310">USA</option>
                                         <option></option>
                                     </select>
@@ -47,7 +50,7 @@
 
                             <tr>
                                 <td>
-                                    <input type="submit" id="Select1" value="Submit"/>
+                                    <input type="submit" id="btn_submit" value="Submit"/>
                                 </td>
                             </tr>
                         </table>
