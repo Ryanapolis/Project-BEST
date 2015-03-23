@@ -41,7 +41,7 @@
     </script> 
     <body onload="init(a);">
         <h1>Below are your results!</h1>
-        <table id="resultstable" >
+            <table id="resultstable" >
                 <thead>
                     <tr>
                         <th>Network Range Summary:</th>
@@ -82,6 +82,8 @@
                 </tbody>
             </table>
                    
-   <div id="mymap"></div>
+
+   <div id="map_container"></div>
+
     </body>
 </html>

@@ -3,7 +3,7 @@
  * objects, It also transforms the query results to JSON format
  */
 
-/**
+/*
  *
  * @author Ashley
  */
@@ -17,8 +17,6 @@
 import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
-
-
 
 public class syniverseQuery  {
      Connection conn;
@@ -86,7 +84,7 @@ public class syniverseQuery  {
             return coordinate;
         }
 
-        catch(SQLException err){
+        catch (SQLException err){
             System.out.println(err.getMessage());  
             return err.getMessage();
         }    

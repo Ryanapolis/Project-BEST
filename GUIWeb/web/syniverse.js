@@ -7,8 +7,8 @@
 function init(coordinate) {
      
     //Select mymap from JSP file to display map
-    var mapDiv = document.getElementById("mymap");
-       
+    var mapDiv = document.getElementById("map_container");
+
     // below we must specify our map options Initialization..will be overridden?
     var coordinate_list = ["-85", "180"]
     if ( coordinate_list.length > 1)
