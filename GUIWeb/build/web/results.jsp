@@ -37,8 +37,11 @@
                                     range: ${nodeLocation.range}
                                 };
                                 a.push(my_results);
-                            </c:forEach>                     
-    </script> 
+                            </c:forEach>
+                           
+    </script>
+    
+    
     <body onload="init(a);">
         <h1>Below are your results!</h1>
         <table id="resultstable" >

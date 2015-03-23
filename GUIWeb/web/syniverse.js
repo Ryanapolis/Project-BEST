@@ -10,7 +10,7 @@ function init(coordinate) {
     var mapDiv = document.getElementById("mymap");
        
     // below we must specify our map options Initialization..will be overridden?
-    var coordinate_list = ["-85", "180"]
+    var coordinate_list = ["120", "-30"]
     if ( coordinate_list.length > 1)
     {
          var mapOptions = {
@@ -87,5 +87,29 @@ function init(coordinate) {
         })
         }
         
+                
+        //Drawing a rectangle given top left, lower right coord> 
+        var rectangle = new google.maps.Rectangle({
+            map:map,
+            bounds: new google.maps.LatLngBounds(
+                    new google.maps.LatLng(28.534660, -81.517022),
+                    new google.maps.LatLng(28.215870, -81.224261)
+                    ),
+            fillColor:"#00FF00",
+            strokeColor:"blue"
+        })
         
+        //Drawing a Polygon given some coord > 
+        var polylines = new google.maps.MVCArray();
+        polylines.push( new google.maps.LatLng(27.686041, -81.967039) );
+        polylines.push( new google.maps.LatLng(27.513224, -82.054929) );
+        polylines.push( new google.maps.LatLng(27.530275, -81.568784) );
+        polylines.push( new google.maps.LatLng(27.829442, -81.159544) );
+        polylines.push( new google.maps.LatLng(28.057519, -81.675901) );
+        
+        var polygonOptions = {path: polylines, strokeColor:"red", fillColor:"00FF00"};
+        var polygon = new google.maps.Polygon(polygonOptions);
+        
+        polygon.setMap(map);
+             
      }
